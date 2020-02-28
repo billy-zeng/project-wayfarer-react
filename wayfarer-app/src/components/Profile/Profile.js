@@ -1,0 +1,19 @@
+import React from 'react';
+
+const Profile = props => {
+  console.log(props);
+
+  // return (
+  //   <div>
+  //     <h1>{props.profile.name && props.profile.name.split(' ')[0]}'s Profile</h1>
+  //     <p><strong>Email:</strong> {props.profile.email}</p>
+  //   </div>
+  // )
+  return (
+    <div>
+      <h1>Profile Page</h1>
+    </div>
+  )
+};
+
+export default Profile;
