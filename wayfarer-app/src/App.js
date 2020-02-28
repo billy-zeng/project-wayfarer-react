@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+import Routes from './config/routes';
+import Navbar from './components/Navbar/Navbar';
 import './App.css';
 
-function App() {
+class App extends Component {
   return (
     <div className="App">
       <header className="App-header">
+
       </header>
     </div>
   );
