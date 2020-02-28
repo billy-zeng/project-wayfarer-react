@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <Nav /> */}
+          <Nav />
           <Routes />
         </header>
       </div>
@@ -18,4 +18,4 @@ class App extends React.Component {
   };
 };
 
-export default withRouter(App);
+export default App;
