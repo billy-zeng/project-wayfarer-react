@@ -8,12 +8,12 @@ import './App.css';
 class App extends React.Component {
   render(){
     return (
-      <>
-      <Nav />
-      <main className="container danger">
-
-      </main>
-      </>
+      <div className="App">
+        <header className="App-header">
+          <Nav />
+          <Routes />
+        </header>
+      </div>
     );
   };
 };
