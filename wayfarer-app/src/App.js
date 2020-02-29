@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import Routes from './config/routes';
 import Nav from './components/Nav/Nav';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   render(){
