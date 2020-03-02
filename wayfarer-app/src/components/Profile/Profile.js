@@ -1,19 +1,17 @@
 import React from 'react';
 
-const Profile = props => {
-  console.log(props);
+import ProfileHeader from './ProfileHeader/ProfileHeader';
+import ProfileMain from './ProfileMain/ProfileMain';
 
-  // return (
-  //   <div>
-  //     <h1>{props.profile.name && props.profile.name.split(' ')[0]}'s Profile</h1>
-  //     <p><strong>Email:</strong> {props.profile.email}</p>
-  //   </div>
-  // )
+import './Profile.css'
+
+const Profile = props => {
   return (
-    <div>
-      <h1>Profile Page</h1>
-    </div>
-  )
+      <div id="profile-wrapper" className="d-flex flex-column align-items-center justify-content-center">
+        <ProfileHeader />
+        <ProfileMain />
+      </div>
+  );
 };
 
 export default Profile;
