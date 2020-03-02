@@ -27,7 +27,6 @@ class Nav extends React.Component {
   handleClose = () => {
     this.setState({
       show: false,
-      showSignup: false,
     })
   };
 
@@ -48,12 +47,10 @@ class Nav extends React.Component {
               </>
               ) : (
               <>
-              <li className="nav-item">
-                <Link className="nav-link" href="#" to="/profile">Profile</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href="#" to="/logout">Log Out</Link>
-              </li>
+                <li className="nav-item">
+                  <Link className="nav-link" href="#" to="/profile">Profile</Link>
+                </li>
+                <li className="nav-item nav-link" onClick={this.props.logout}>Logout</li>
               </>
             )}
           </ul>
@@ -62,7 +59,7 @@ class Nav extends React.Component {
           <Modal.Body>
             {this.state.showSignup
               ? <Signup handleOpenLogin={this.handleOpenLogin} />
-              : <Login handleOpenSignup={this.handleOpenSignup} />
+              : <Login handleOpenSignup={this.handleOpenSignup} setCurrentUser={this.props.setCurrentUser} handleClose={this.handleClose} />
             }
           </Modal.Body>
         </Modal>

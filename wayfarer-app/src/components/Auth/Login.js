@@ -22,6 +22,7 @@ class Login extends React.Component {
       .then(res => {
         console.log(res);
         this.props.setCurrentUser(res.data.data);
+        this.props.handleClose();
         this.props.history.push('/profile');
       })
       .catch(err => console.log(err.response));
@@ -64,7 +65,7 @@ class Login extends React.Component {
         </div>
         <hr />
           <div>
-            <p onClick={this.props.handleOpenSignup}>Don't have an account? Signup here!</p>
+            <p onClick={this.props.handleOpenSignup}>Don't have an account? Sign up here!</p>
           </div>
       </div>
     );
