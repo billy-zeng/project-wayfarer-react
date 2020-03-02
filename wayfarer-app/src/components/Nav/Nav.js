@@ -1,9 +1,13 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+
+// Components
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import Signup from '../Auth/Signup';
 import Login from '../Auth/Login';
+
+// Styles
+import './Nav.css';
 
 class Nav extends React.Component {
   state = {
