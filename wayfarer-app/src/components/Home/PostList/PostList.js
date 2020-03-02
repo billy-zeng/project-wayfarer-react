@@ -1,18 +1,17 @@
 import React from 'react';
-import {Container} from 'react-bootstrap';
 
 import Post from './Post/Post';
 
 const PostList = props => {
   return(
-    <Container>
-      <h2>Latest PostList</h2>
-      <Container className="d-flex flex-row">
+    <div className="d-flex flex-column align-items-center justify-content-center m-5">
+      <h2>Latest Posts</h2>
+      <div className="d-flex flex-row align-items-center justify-content-around">
         <Post />
         <Post />
         <Post />
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 
