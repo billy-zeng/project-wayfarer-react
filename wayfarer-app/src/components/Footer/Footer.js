@@ -17,7 +17,7 @@ const Footer = props => {
         <Button className="btn-dark" type="submit">Subscribe</Button>
         </div>
       </Container>
-      <p class="copyright">&copy;2020 Wayfarer</p>
+      <p className="copyright">&copy;2020 Wayfarer</p>
     </footer>
   );
 };

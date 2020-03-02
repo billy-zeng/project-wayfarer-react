@@ -22,6 +22,7 @@ class Login extends React.Component {
       .then(res => {
         console.log(res);
         this.props.setCurrentUser(res.data.data);
+        this.props.handleClose();
         this.props.history.push('/profile');
       })
       .catch(err => console.log(err.response));
@@ -56,15 +57,17 @@ class Login extends React.Component {
                   value={this.state.password}
                 />
               </div>
-              <button className='btn btn-primary float-right' type='submit'>
-                Login
-              </button>
+              <div className='button-wrapper'>
+                <button className='btn btn-primary' type='submit'>
+                  Login
+                </button>
+              </div>
             </form>
           </div>
         </div>
         <hr />
           <div>
-            <p onClick={this.props.handleOpenSignup}>Don't have an account? Signup here!</p>
+            <p onClick={this.props.handleOpenSignup}>Don't have an account? Sign up here!</p>
           </div>
       </div>
     );

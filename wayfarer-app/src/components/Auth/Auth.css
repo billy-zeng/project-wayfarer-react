@@ -2,3 +2,11 @@ p {
   text-align: center;
   color: royalblue;
 }
+
+.button-wrapper {
+  text-align: center;
+}
+
+div > h4 {
+  text-align: center;
+}

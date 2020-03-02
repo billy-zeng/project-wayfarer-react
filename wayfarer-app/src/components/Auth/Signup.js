@@ -23,11 +23,9 @@ class Signup extends React.Component {
       .post(`${process.env.REACT_APP_API_URL}/auth/signup`, this.state)
       .then(res => {
         console.log(res);
-        // this.props.history.push('/login');
         this.props.handleOpenLogin();
       })
       .catch(err => console.log(err.response))
-    // this.props.handleOpenLogin();
   };
 
   render(){
@@ -38,7 +36,7 @@ class Signup extends React.Component {
             <h4 className='mb-3'>Signup</h4>
             <form onSubmit={this.handleSubmit}>
               <div className='form-group'>
-                <label htmlFor='name'>Userame</label>
+                <label htmlFor='name'>Username</label>
                 <input
                   onChange={this.handleChange}
                   className='form-control form-control-lg'
@@ -81,9 +79,11 @@ class Signup extends React.Component {
                   value={this.state.password2}
                 />
               </div>
-              <button className='btn btn-primary float-right' type='submit'>
-                Register
-              </button>
+              <div className='button-wrapper'>
+                <button className='btn btn-primary' type='submit'>
+                  Register
+                </button>
+              </div>
             </form>
           </div>
         </div>
