@@ -1,7 +1,5 @@
 import React from 'react';
 // import axios from 'axios';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import './Auth.css';
 
 class Signup extends React.Component {

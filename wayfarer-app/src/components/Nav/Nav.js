@@ -44,18 +44,28 @@ class Nav extends React.Component {
           <h5 className="mr-1 ml-1 mt-1"><i class="fas fa-map-signs text-dark"></i></h5>
           <Link className="navbar-brand" href="#" to="/">Wayfarer</Link>
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li className="nav-item nav-link" onClick={this.handleOpenSignup}>Sign Up</li>
-            <li className="nav-item nav-link" onClick={this.handleOpenLogin}>Log In</li>
-            <li className="nav-item">
-              <Link className="nav-link" href="#" tabindex="-1" aria-disabled="/">About</Link>
-            </li>
-            <Modal show={this.state.show} onHide={this.handleClose}>
-              <Modal.Body>
-                {this.state.showSignup ? <Signup /> : <Login />}
-              </Modal.Body>
-            </Modal>
+            {!this.props.currentUser ? (
+              <>
+                <li className="nav-item nav-link" onClick={this.handleOpenSignup}>Sign Up</li>
+                <li className="nav-item nav-link" onClick={this.handleOpenLogin}>Log In</li>
+              </>
+              ) : (
+              <>
+              <li className="nav-item">
+                <Link className="nav-link" href="#" to="/profile">Profile</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="#" to="/logout">Log Out</Link>
+              </li>
+              </>
+            )}
           </ul>
         </div>
+        <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Body>
+            {this.state.showSignup ? <Signup /> : <Login />}
+          </Modal.Body>
+        </Modal>
       </nav>
     );
   };
