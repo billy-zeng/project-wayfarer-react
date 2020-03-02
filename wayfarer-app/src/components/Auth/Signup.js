@@ -1,5 +1,5 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './Auth.css';
 
 class Signup extends React.Component {
@@ -16,22 +16,36 @@ class Signup extends React.Component {
     });
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/auth/signup`, this.state)
+      .then(res => {
+        console.log(res);
+        // this.props.history.push('/login');
+        this.props.handleOpenLogin();
+      })
+      .catch(err => console.log(err.response))
+    // this.props.handleOpenLogin();
+  };
+
   render(){
     return(
       <div className='container mt-4'>
         <div className='row'>
-          <div className='col-md-4 offset-md-4'>
+          <div className='col-md-8 offset-md-2'>
             <h4 className='mb-3'>Signup</h4>
             <form onSubmit={this.handleSubmit}>
               <div className='form-group'>
-                <label htmlFor='name'>Name</label>
+                <label htmlFor='name'>Userame</label>
                 <input
                   onChange={this.handleChange}
                   className='form-control form-control-lg'
                   type='text'
-                  id='name'
-                  name='name'
-                  value={this.state.name}
+                  id='username'
+                  name='username'
+                  value={this.state.username}
                 />
               </div>
               <div className='form-group'>
@@ -73,6 +87,10 @@ class Signup extends React.Component {
             </form>
           </div>
         </div>
+        <hr />
+          <div>
+            <p onClick={this.props.handleOpenLogin}>Already have an account? Login here!</p>
+          </div>
       </div>
     )
   }
