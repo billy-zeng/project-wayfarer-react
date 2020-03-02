@@ -10,12 +10,6 @@ const Routes = props => {
       <Route exact path='/' component={Home} />
       <Route exact path='/profile' component={ProfileContainer} />
       <Route exact path='/profile/edit' component={ProfileForm} />
-      {/* <Route
-        exact path='/profile/edit'
-        render={() => (
-          <ProfileForm currentUser={props.currentUser}/>
-        )}
-      /> */}
     </Switch>
   )
 }
