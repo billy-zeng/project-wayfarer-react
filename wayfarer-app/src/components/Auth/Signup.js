@@ -27,6 +27,7 @@ class Signup extends React.Component {
         this.props.handleOpenLogin();
       })
       .catch(err => console.log(err.response))
+    // this.props.handleOpenLogin();
   };
 
   render(){
