@@ -1,18 +1,16 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Container from 'react-bootstrap/Container'
+
+// Components
+import Header from './Header/Header';
+import PostList from './PostList/PostList';
+
+// CSS
 import './Home.css';
 
-const Home = () => (
+const Home = props => (
   <>
-    <Jumbotron className="hero-jumbotron">
-      <Container>
-        <h1>Welcome to Wayfarer</h1>
-        <p>
-          Wayfarer is a social space for people to share experiences from their favorites cities.
-        </p>
-      </Container>
-    </Jumbotron>
+    <Header />
+    <PostList />
   </>
 );
 
