@@ -12,7 +12,7 @@ const Nav = props => {
         <h5 className="mr-1 ml-1 mt-1"><i class="fas fa-map-signs text-dark"></i></h5>
         <Link className="navbar-brand" href="#" to="/">Wayfarer</Link>
         <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-          {props.currentUser ? (
+          {!props.currentUser ? (
           <>
           <li className="nav-item">
             <Link className="nav-link" href="#" to="/signup">Sign Up</Link>

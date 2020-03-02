@@ -6,9 +6,9 @@ const Footer = props => {
     <footer>
       <Container className="d-flex flex-column align-items-center justify-content-center">
         <div className="d-flex flex-row align-items-center justify-content-center">
-          <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-          <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-          <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a className="mr-1 ml-1" href=""><i className="fab fa-facebook-square"></i></a>
+          <a className="mr-1 ml-1" href=""><i className="fab fa-twitter-square"></i></a>
+          <a className="mr-1 ml-1" href=""><i className="fab fa-instagram-square"></i></a>
         </div>
         <input type="text" placeholder="Email Address"/>
         <Button type="submit">Subscribe</Button>
