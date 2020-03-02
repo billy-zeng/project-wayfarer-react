@@ -79,9 +79,11 @@ class Signup extends React.Component {
                   value={this.state.password2}
                 />
               </div>
-              <button className='btn btn-primary float-right' type='submit'>
-                Register
-              </button>
+              <div className='button-wrapper'>
+                <button className='btn btn-primary' type='submit'>
+                  Register
+                </button>
+              </div>
             </form>
           </div>
         </div>

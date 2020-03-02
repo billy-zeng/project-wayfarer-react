@@ -57,9 +57,11 @@ class Login extends React.Component {
                   value={this.state.password}
                 />
               </div>
-              <button className='btn btn-primary float-right' type='submit'>
-                Login
-              </button>
+              <div className='button-wrapper'>
+                <button className='btn btn-primary' type='submit'>
+                  Login
+                </button>
+              </div>
             </form>
           </div>
         </div>
