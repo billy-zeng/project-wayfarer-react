@@ -37,7 +37,7 @@ class App extends React.Component {
     return (
       <div className="App">
           <Nav currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout} />
-          <Routes />
+          <Routes currentUser={this.state.currentUser} />
           <Footer />
       </div>
     );
