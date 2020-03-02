@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 import './Auth.css';
 
 class Login extends React.Component {
@@ -15,17 +15,17 @@ class Login extends React.Component {
     });
   };
 
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  //   axios
-  //     .post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {withCredentials: true})
-  //     .then(res => {
-  //       console.log(res);
-  //       this.props.setCurrentUser(res.data.data);
-  //       this.props.history.push('/profile');
-  //     })
-  //     .catch(err => console.log(err.response));
-  // };
+  handleSubmit = event => {
+    event.preventDefault();
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {withCredentials: true})
+      .then(res => {
+        console.log(res);
+        this.props.setCurrentUser(res.data.data);
+        this.props.history.push('/profile');
+      })
+      .catch(err => console.log(err.response));
+  };
 
   render() {
     return (

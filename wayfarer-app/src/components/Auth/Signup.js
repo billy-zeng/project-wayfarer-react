@@ -1,5 +1,5 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import './Auth.css';
 
 class Signup extends React.Component {
@@ -16,6 +16,19 @@ class Signup extends React.Component {
     });
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/auth/signup`, this.state)
+      .then(res => {
+        console.log(res);
+        // this.props.history.push('/login');
+        this.props.handleOpenLogin();
+      })
+      .catch(err => console.log(err.response))
+  };
+
   render(){
     return(
       <div className='container mt-4'>
@@ -24,14 +37,14 @@ class Signup extends React.Component {
             <h4 className='mb-3'>Signup</h4>
             <form onSubmit={this.handleSubmit}>
               <div className='form-group'>
-                <label htmlFor='name'>Name</label>
+                <label htmlFor='name'>Userame</label>
                 <input
                   onChange={this.handleChange}
                   className='form-control form-control-lg'
                   type='text'
-                  id='name'
-                  name='name'
-                  value={this.state.name}
+                  id='username'
+                  name='username'
+                  value={this.state.username}
                 />
               </div>
               <div className='form-group'>
