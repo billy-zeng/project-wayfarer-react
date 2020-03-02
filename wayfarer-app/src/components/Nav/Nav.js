@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Signup from '../Auth/Signup';
 import Login from '../Auth/Login';
 
@@ -9,20 +9,19 @@ class Nav extends React.Component {
   state = {
     show: false,
     showSignup: false,
-    showLogin: false
   };
 
   handleOpenSignup = () => {
     this.setState({
       show: true,
-      showSignup: true
+      showSignup: true,
     })
   };
 
   handleOpenLogin = () => {
     this.setState({
       show: true,
-      showLogin: true
+      showSignup: false
     })
   };
 
@@ -30,7 +29,6 @@ class Nav extends React.Component {
     this.setState({
       show: false,
       showSignup: false,
-      showLogin: false
     })
   };
 
@@ -63,7 +61,10 @@ class Nav extends React.Component {
         </div>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>
-            {this.state.showSignup ? <Signup /> : <Login />}
+            {this.state.showSignup
+              ? <Signup handleOpenLogin={this.handleOpenLogin} />
+              : <Login handleOpenSignup={this.handleOpenSignup} />
+            }
           </Modal.Body>
         </Modal>
       </nav>

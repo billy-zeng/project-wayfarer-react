@@ -31,7 +31,7 @@ class Login extends React.Component {
     return (
       <div className='container mt-4'>
         <div className='row'>
-          <div className='col-md-4 offset-md-4'>
+          <div className='col-md-8 offset-md-2'>
             <h4 className='mb-3'>Login</h4>
             <form onSubmit={this.handleSubmit}>
               <div className='form-group'>
@@ -62,6 +62,10 @@ class Login extends React.Component {
             </form>
           </div>
         </div>
+        <hr />
+          <div>
+            <p onClick={this.props.handleOpenSignup}>Don't have an account? Signup here!</p>
+          </div>
       </div>
     );
   }
