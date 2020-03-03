@@ -8,8 +8,8 @@ import './Profile.css'
 const Profile = props => {
   return (
       <div id="profile-wrapper" className="d-flex flex-column align-items-center justify-content-center">
-        <ProfileHeader />
-        <ProfileMain profile={this.props.profile} />
+        <ProfileHeader profile={props.profile} />
+        <ProfileMain profile={props.profile} />
       </div>
   );
 };

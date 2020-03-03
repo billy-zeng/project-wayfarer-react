@@ -38,7 +38,7 @@ class ProfileForm extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     axios
-      .post(`${process.env.REACT_APP_API_URL}/users`, this.state, {withCredentials: true})
+      .post(`${process.env.REACT_APP_API_URL}/users/profile/edit`, this.state, {withCredentials: true})
       .then(res => {
         console.log(res);
         this.props.history.push('/profile');
