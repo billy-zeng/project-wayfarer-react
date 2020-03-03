@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './ProfileForm.css';
+import { withRouter } from 'react-router-dom';
 
 class ProfileForm extends React.Component {
   state = {
@@ -132,4 +133,4 @@ class ProfileForm extends React.Component {
   }
 }
 
-export default ProfileForm;
+export default withRouter(ProfileForm);

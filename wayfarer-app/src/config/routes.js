@@ -9,8 +9,7 @@ const Routes = props => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
-      <Route exact path='/profile' component={ProfileContainer} />
-      <Route exact path='/profile/edit' component={ProfileForm} />
+      <Route path='/profile' component={ProfileContainer} />
       <Route exact path='/post/detail' component={PostDetail} />
     </Switch>
   )
