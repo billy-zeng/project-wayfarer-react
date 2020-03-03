@@ -89,7 +89,7 @@ class Signup extends React.Component {
         </div>
         <hr />
           <div>
-            <p onClick={this.props.handleOpenLogin}>Already have an account? Login here!</p>
+            <p class='auth-link' onClick={this.props.handleOpenLogin}>Already have an account? Login here!</p>
           </div>
       </div>
     )

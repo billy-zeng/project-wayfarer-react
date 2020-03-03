@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 // Components
 import Container from 'react-bootstrap/Container'
@@ -11,11 +11,13 @@ const ProfileMain = props => {
   return(
     <Container id="profile-main" className="d-flex flex-row align-items-center justify-content-center">
       <div id="profile-nav" className="col-sm-3 d-flex flex-column align-items-center justify-content-start">
-        <a id="overviewBtn" class="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-user"></i>Overview</a>
-        <a id="reviewsBtn" class="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-comment-alt"></i>Posts</a>
-        <a id="reviewsBtn" class="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="far fa-edit"></i>Update Info</a>
-        <a id="reviewsBtn" class="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-camera"></i>Update Picture</a>
-        <a id="reviewsBtn" class="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-key"></i>Change Password</a>
+        <a id="overviewBtn" className="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-user"></i>Overview</a>
+        <a className="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-comment-alt"></i>Posts</a>
+        <Link to='/profile/edit'>
+          <a className="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="far fa-edit"></i>Update Info</a>
+        </Link>
+        <a className="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-camera"></i>Update Picture</a>
+        <a className="btn btn-dark text-light d-flex flex-row justify-content-start align-items-center"><i class="fas fa-key"></i>Change Password</a>
       </div>
       <div id="profile-main-content" className="col-sm-9 d-flex flex-column align-items-center justify-content-start">
         <div id="given-names-wrapper" className="container d-flex flex-row align-items-center justify-content-center mt-1 mb-5">
