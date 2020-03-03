@@ -25,7 +25,8 @@ class ProfileForm extends React.Component {
       .post(`${process.env.REACT_APP_API_URL}/users/profile/edit`, this.state, {withCredentials: true})
       .then(res => {
         console.log(res);
-        this.props.updateUser(this.state);
+        // this.props.updateUser(this.state);
+        this.props.updateUser(res.data.data);
         this.props.history.push('/profile');
       })
       .catch(err => console.log(err.response));
