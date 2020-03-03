@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ProfileHeader from './ProfileHeader/ProfileHeader';
-import ProfileMain from './ProfileMain/ProfileMain';
+import Routes from './routes'
 
 import './Profile.css'
 
@@ -9,7 +9,7 @@ const Profile = props => {
   return (
       <div id="profile-wrapper" className="d-flex flex-column align-items-center justify-content-center">
         <ProfileHeader />
-        <ProfileMain profile={this.props.profile} />
+        <Routes profile={props.profile} />
       </div>
   );
 };
