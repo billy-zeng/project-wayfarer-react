@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import ProfileMain from './ProfileMain/ProfileMain';
 import ProfileForm from './ProfileForm/ProfileForm';
+import MyPosts from './MyPosts/MyPosts';
 
 const Routes = props => {
   return (
@@ -14,12 +15,17 @@ const Routes = props => {
         )}
       />
       <Route
+        path='/profile/myposts'
+        render={() => (
+          <MyPosts profile={props.profile} />
+        )}
+      />
+      <Route
         path='/profile'
         render={() => (
           <ProfileMain profile={props.profile} />
         )}
       />
-      {/* <Route exact path='/profile/myposts' component={} /> */}
       {/* <Route exact path='/profile/mycomments' component={} /> */}
     </Switch>
   )
