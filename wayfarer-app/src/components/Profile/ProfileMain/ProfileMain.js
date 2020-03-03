@@ -63,7 +63,7 @@ import './ProfileMain.css';
 
 const ProfileMain = props => {
   return (
-    <div id="profile-main-content" className="col-sm-9 d-flex flex-column align-items-center justify-content-start">
+    <div id="profile-main-content" className="col-sm-9 d-flex flex-column align-items-center justify-content-start mt-5">
       <div id="given-names-wrapper" className="container d-flex flex-row align-items-center justify-content-center mt-1 mb-5">
         <div id="first-name-wrapper" className="container col-sm-3 d-flex flex-column align-items-start justify-content-center">
           <h4>{props.profile.firstName}</h4>
