@@ -7,6 +7,10 @@ class ProfileContainer extends React.Component {
     profile: {}
   };
 
+  updateUser = user => {
+    this.setState({ profile: user });
+  }
+
   componentDidMount() {
     const userId = localStorage.getItem('uId');
     axios
@@ -20,7 +24,7 @@ class ProfileContainer extends React.Component {
   }
 
   render() {
-    return <Profile profile={this.state.profile} />;
+    return <Profile profile={this.state.profile} updateUser={this.updateUser} />;
   }
 }
 
