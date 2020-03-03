@@ -10,7 +10,7 @@ const Profile = props => {
   return (
     <div id="profile-wrapper" className="d-flex flex-column align-items-center justify-content-center">
         <ProfileHeader profile={props.profile} />
-        <Container id="profile-main" className="d-flex flex-row align-items-center justify-content-center">
+        <Container id="profile-main" className="d-flex flex-row align-items-start justify-content-center">
           <ProfileNav />
           <Routes profile={props.profile} />
         </Container>
