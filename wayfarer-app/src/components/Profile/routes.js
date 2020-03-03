@@ -7,9 +7,18 @@ import ProfileForm from './ProfileForm/ProfileForm';
 const Routes = props => {
   return (
     <Switch>
-      
-      <Route  path='/profile/edit' component={ProfileForm} />
-      <Route  path='/profile' component={ProfileMain} />
+      <Route
+        path='/profile/edit'
+        render={() => (
+          <ProfileForm profile={props.profile} />
+        )}
+      />
+      <Route
+        path='/profile'
+        render={() => (
+          <ProfileMain profile={props.profile} />
+        )}
+      />
       {/* <Route exact path='/profile/myposts' component={} /> */}
       {/* <Route exact path='/profile/mycomments' component={} /> */}
     </Switch>

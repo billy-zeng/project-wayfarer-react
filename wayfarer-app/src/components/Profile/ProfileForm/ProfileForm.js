@@ -5,30 +5,42 @@ import { withRouter } from 'react-router-dom';
 
 class ProfileForm extends React.Component {
   state = {
-    firstName: '',
-    lastName: '',
-    username: '',
-    email: '',
-    city: '',
-    state: ''
+    firstName: this.props.profile.firstName,
+    lastName: this.props.profile.lastName,
+    username: this.props.profile.username,
+    email: this.props.profile.email,
+    city: this.props.profile.city,
+    state: this.props.profile.state
+    // firstName: '',
+    // lastName: '',
+    // username: '',
+    // email: '',
+    // city: '',
+    // state: ''
   };
 
-  componentDidMount() {
-    const userId = localStorage.getItem('uId');
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/users/${userId}`, {withCredentials: true})
-      .then(res => {
-        this.setState({
-          firstName: res.data.data.firstName,
-          lastName: res.data.data.lastName,
-          username: res.data.data.username,
-          email: res.data.data.email,
-          city: res.data.data.city,
-          state: res.data.data.state,
-        });
-      })
-      .catch(err => console.log(err.response))
-  }
+  // componentDidMount() {
+  //   const userId = localStorage.getItem('uId');
+  //   axios
+  //     .get(`${process.env.REACT_APP_API_URL}/users/${userId}`, {withCredentials: true})
+  //     .then(res => {
+  //       this.setState({
+  //         // firstName: res.data.data.firstName,
+  //         // lastName: res.data.data.lastName,
+  //         // username: res.data.data.username,
+  //         // email: res.data.data.email,
+  //         // city: res.data.data.city,
+  //         // state: res.data.data.state,
+  //         firstName: this.props.profile.firstName,
+  //         lastName: this.props.profile.lastName,
+  //         username: this.props.profile.username,
+  //         email: this.props.profile.email,
+  //         city: this.props.profile.city,
+  //         state: this.props.profile.state,
+  //       });
+  //     })
+  //     .catch(err => console.log(err.response))
+  // }
 
   handleChange = event => {
     this.setState({
