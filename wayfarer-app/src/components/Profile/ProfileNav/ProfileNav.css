@@ -1,4 +1,4 @@
-/* #profile-nav {
+#profile-nav {
   height: 35em;
   background-color: whitesmoke;
   padding: 1em 0;
@@ -12,9 +12,4 @@
 
 #profile-nav i {
   margin-right: .5em;
-} */
-
-#profile-main-content {
-  height: 35em;
 }
-
