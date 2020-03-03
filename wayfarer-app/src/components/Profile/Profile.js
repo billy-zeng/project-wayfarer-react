@@ -9,7 +9,7 @@ const Profile = props => {
   return (
       <div id="profile-wrapper" className="d-flex flex-column align-items-center justify-content-center">
         <ProfileHeader />
-        <ProfileMain profile={props.profile} />
+        <ProfileMain profile={this.props.profile} />
       </div>
   );
 };

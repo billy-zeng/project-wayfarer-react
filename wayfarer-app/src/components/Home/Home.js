@@ -3,7 +3,7 @@ import React from 'react';
 // Components
 // import Header from './Header/Header';
 import ControlledCarousel from './ControlledCarousel/ControlledCarousel';
-import PostList from './PostList/PostList';
+import PostList from '../PostList/PostList';
 
 // CSS
 import './Home.css';

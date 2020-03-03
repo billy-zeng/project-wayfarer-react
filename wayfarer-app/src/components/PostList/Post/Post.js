@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import './Post.css';
 
@@ -10,7 +11,9 @@ const Post = props => {
       <div className="d-flex flex-column">
         <h3>Seattle &mdash; Portland</h3>
         <p className="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel voluptate eos nisi necessitatibus aperiam dolorem ut eveniet quae dolores quisquam nulla, cumque tenetur blanditiis modi tempora excepturi error veniam suscipit dicta praesentium reiciendis illo obcaecati odit inventore minima. Pariatur facilis, excepturi! Facilis cumque dicta reiciendis nam accusantium cum pariatur sunt accusamus voluptas eaque sapiente totam dolorum nulla eligendi molestiae, quidem odit repellat temporibus quae ipsa aut placeat modi sint doloribus. Ipsum nisi veritatis, facere doloribus. Nihil veritatis corporis eaque odio.</p>
+        <Link className="align-self-end" to="/post/detail">
         <button className="btn btn-dark align-self-end">Read More</button>
+        </Link>
       </div>
     </div>
     </>
