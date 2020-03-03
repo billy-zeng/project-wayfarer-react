@@ -11,7 +11,7 @@ const Routes = props => {
       <Route
         path='/profile/edit'
         render={() => (
-          <ProfileForm profile={props.profile} />
+          <ProfileForm profile={props.profile} updateUser={props.updateUser} />
         )}
       />
       <Route
