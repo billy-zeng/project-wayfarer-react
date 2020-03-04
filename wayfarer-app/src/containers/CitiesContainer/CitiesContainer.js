@@ -33,10 +33,11 @@ class CitiesContainer extends React.Component {
   };
 
   render() {
+    console.log(this.updateCurrentCity)
     return (
       <div className="container d-flex flex-row justify-content-center align-items-center">
         <CityNav currentCity={this.state.currentCity} updateCurrentCity={this.updateCurrentCity} />
-        <CityMain currentCity={this.state.currentCity}  posts={[this.state.cityPosts]} />
+        <CityMain currentCity={this.state.currentCity} posts={this.state.cityPosts} />
       </div>
     )
   }
