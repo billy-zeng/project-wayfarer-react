@@ -57,7 +57,6 @@ class PostForm extends React.Component {
                         </div>
 
 
-
                         <div className='form-group'>
 
                                 <label htmlFor='title'>
