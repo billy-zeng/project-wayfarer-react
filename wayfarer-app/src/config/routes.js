@@ -6,6 +6,8 @@ import ProfileContainer from '../containers/ProfileContainer/ProfileContainer';
 import PostDetail from '../components/PostDetail/PostDetail';
 import Cities from '../components/Cities/Cities';
 
+import PostForm from '../components/PostForm/PostForm';
+
 const Routes = props => {
   return (
     <Switch>
@@ -13,6 +15,7 @@ const Routes = props => {
       <Route path='/profile' component={ProfileContainer} />
       <Route exact path='/post/detail' component={PostDetail} />
       <Route exact path='/cities/1' component={Cities} />
+      <Route exact path='/postnew' component={PostForm} />
     </Switch>
   )
 }
