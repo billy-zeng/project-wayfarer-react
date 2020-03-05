@@ -67,7 +67,7 @@ class Login extends React.Component {
         </div>
         <hr />
           <div>
-            <p class='auth-link' onClick={this.props.handleOpenSignup}>Don't have an account? Sign up here!</p>
+            <p className='auth-link' onClick={this.props.handleOpenSignup}>Don't have an account? Sign up here!</p>
           </div>
       </div>
     );

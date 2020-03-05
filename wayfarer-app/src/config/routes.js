@@ -4,6 +4,7 @@ import Home from '../components/Home/Home';
 import ProfileContainer from '../containers/ProfileContainer/ProfileContainer';
 import PostDetail from '../components/PostDetail/PostDetail';
 import CitiesContainer from '../containers/CitiesContainer/CitiesContainer';
+import PostForm from '../components/PostForm/PostForm';
 
 const Routes = props => {
   return (
@@ -14,6 +15,8 @@ const Routes = props => {
       />
       <Route path='/profile' component={ProfileContainer} />
       <Route exact path='/post/detail' component={PostDetail} />
+      {/* refactor into add post modal */}
+      <Route exact path='/postnew' component={PostForm} />
     </Switch>
   )
 }
