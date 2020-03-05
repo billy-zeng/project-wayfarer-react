@@ -6,7 +6,7 @@ import './PostMini.css';
 const PostMini = props => {
   return(
     <>
-    <div className="post-mini border rounded text-dark bg-light container d-flex flex-row align-items-center justify-content-center m-2">
+    <div className="post-mini m-3 border rounded text-dark bg-light container d-flex flex-row align-items-center justify-content-center">
       <div className="container col-sm-3 d-flex flex-column align-items-center jutify-content-center">
         <img className="rounded border post-mini-img" src="https://images.unsplash.com/photo-1570432871838-d61aed09f144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"/>
       </div>
