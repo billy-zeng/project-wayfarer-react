@@ -8,10 +8,12 @@ import CitiesContainer from '../containers/CitiesContainer/CitiesContainer';
 const Routes = props => {
   return (
     <Switch>
-      <Route exact path='/' component={Home} />
+      <Route exact path='/' component={props.currentUser 
+        ? CitiesContainer
+        : Home} 
+      />
       <Route path='/profile' component={ProfileContainer} />
       <Route exact path='/post/detail' component={PostDetail} />
-      <Route exact path='/cities' component={CitiesContainer} />
     </Switch>
   )
 }

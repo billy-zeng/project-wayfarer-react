@@ -23,7 +23,7 @@ const PostMini = props => {
         </div>
       </div>
     </div>
-    <PostInteraction />
+    <PostInteraction postData={props.postData} />
     </>
   );
 };
