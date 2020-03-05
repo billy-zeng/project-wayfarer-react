@@ -6,7 +6,7 @@ import PostList from '../../PostList/PostList';
 const MyPosts = props => {
   return(
     <div className="container d-flex flex-column justify-content-center align-items-center">
-      <PostList posts={props.posts} />
+      <PostList posts={props.posts} updatePosts={props.updateUserPosts} />
     </div>
   );
 };
