@@ -9,14 +9,14 @@ class PostList extends React.Component {
 
   displayPosts = posts => {
     return posts.map(post => {
-      return <PostMini key={post._id} postData={post} />
+      return <PostMini key={post._id} postData={post} updateCityPosts={this.props.updateCityPosts} />
     });
   };
 
   render() {
     return (
       <div className="container d-flex flex-column justify-content-center align-items-center">
-        <PostListHeader />
+        <PostListHeader updateCityPosts={this.props.updateCityPosts} />
         {this.displayPosts(this.props.posts)}
       </div>
     );
