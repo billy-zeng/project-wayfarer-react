@@ -49,6 +49,14 @@ class Nav extends React.Component {
               <>
                 <li className="nav-item nav-link" onClick={this.handleOpenSignup}>Sign Up</li>
                 <li className="nav-item nav-link" onClick={this.handleOpenLogin}>Log In</li>
+                <Modal show={this.state.show} onHide={this.handleClose}>
+                  <Modal.Body>
+                    {this.state.showSignup
+                      ? <Signup handleOpenLogin={this.handleOpenLogin} />
+                      : <Login handleOpenSignup={this.handleOpenSignup} setCurrentUser={this.props.setCurrentUser} handleClose={this.handleClose} />
+                    }
+                  </Modal.Body>
+                </Modal>
               </>
               ) : (
               <>
@@ -60,14 +68,14 @@ class Nav extends React.Component {
             )}
           </ul>
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        {/* <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Body>
             {this.state.showSignup
               ? <Signup handleOpenLogin={this.handleOpenLogin} />
               : <Login handleOpenSignup={this.handleOpenSignup} setCurrentUser={this.props.setCurrentUser} handleClose={this.handleClose} />
             }
           </Modal.Body>
-        </Modal>
+        </Modal> */}
       </nav>
     );
   };
