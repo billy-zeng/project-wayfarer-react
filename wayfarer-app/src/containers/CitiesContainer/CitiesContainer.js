@@ -21,7 +21,7 @@ class CitiesContainer extends React.Component {
     .get(`${process.env.REACT_APP_API_URL}/posts?cityCode=${this.state.currentCity}`)
     .then(res => {
       this.setState({
-        cityPosts: [res.data]
+        cityPosts: res.data.data
       });
     })
     .catch(err => console.log(err.response))
@@ -33,7 +33,7 @@ class CitiesContainer extends React.Component {
   };
 
   render() {
-    console.log(this.updateCurrentCity)
+    console.log(this.state.cityPosts)
     return (
       <div className="container d-flex flex-row justify-content-center align-items-center">
         <CityNav currentCity={this.state.currentCity} updateCurrentCity={this.updateCurrentCity} />
