@@ -7,7 +7,7 @@ const CityMain = (props) => {
   return(
     <div className="container d-flex flex-column justify-content-center align-items-center">
     <CityHeader currentCity={props.currentCity} />
-    <PostList currentCity={props.currentCity} posts={props.posts} />
+    <PostList currentCity={props.currentCity} posts={props.posts} updateCityPosts={props.updateCityPosts} />
     </div>
   );
 };

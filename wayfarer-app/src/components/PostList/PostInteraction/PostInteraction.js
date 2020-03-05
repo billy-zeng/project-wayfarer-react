@@ -47,11 +47,13 @@ class PostInteraction extends React.Component {
       .delete(`${process.env.REACT_APP_API_URL}/posts/${this.props.postData._id}`)
       .then(res => {
         console.log(res)
+        this.props.updateCityPosts();
       })
       .catch(err => console.log(err));
   }
  
   render(){
+    console.log(this.props)
     return (
       <div className="container d-flex flex-row align-items-end justify-content-end">
         <a className="btn btn-info text-light" onClick={this.handleOpenEdit}>Edit Post</a>
