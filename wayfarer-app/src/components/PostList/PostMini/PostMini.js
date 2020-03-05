@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PostInteraction from '../PostInteraction/PostInteraction';
 
 import './PostMini.css';
 
@@ -22,6 +23,7 @@ const PostMini = props => {
         </div>
       </div>
     </div>
+    <PostInteraction />
     </>
   );
 };
