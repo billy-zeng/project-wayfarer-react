@@ -16,12 +16,12 @@ class CitiesContainer extends React.Component {
     this.getCityPosts();
   };
 
-  getCityPosts() {
+  getCityPosts = () => {
     axios
     .get(`${process.env.REACT_APP_API_URL}/posts?cityCode=${this.state.currentCity}`)
     .then(res => {
       this.setState({
-        cityPosts: res.data.data
+        cityPosts: res.data.data.reverse()
       });
     })
     .catch(err => console.log(err.response))
@@ -37,7 +37,7 @@ class CitiesContainer extends React.Component {
     return (
       <div className="container d-flex flex-row justify-content-center align-items-center">
         <CityNav currentCity={this.state.currentCity} updateCurrentCity={this.updateCurrentCity} />
-        <CityMain currentCity={this.state.currentCity} posts={this.state.cityPosts} />
+        <CityMain currentCity={this.state.currentCity} posts={this.state.cityPosts} updateCityPosts={this.getCityPosts} />
       </div>
     )
   }
