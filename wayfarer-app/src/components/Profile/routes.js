@@ -17,7 +17,7 @@ const Routes = props => {
       <Route
         path='/profile/myposts'
         render={() => (
-          <MyPosts profile={props.profile} posts={props.posts} />
+          <MyPosts profile={props.profile} posts={props.posts} updateUserPosts={props.updateUserPosts} />
         )}
       />
       <Route

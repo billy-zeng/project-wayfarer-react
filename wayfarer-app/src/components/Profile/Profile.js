@@ -12,7 +12,7 @@ const Profile = props => {
         <ProfileHeader profile={props.profile} />
         <Container id="profile-main" className="d-flex flex-row align-items-start justify-content-center">
           <ProfileNav />
-          <Routes profile={props.profile} updateUser={props.updateUser} posts={props.posts} />
+          <Routes profile={props.profile} updateUser={props.updateUser} posts={props.posts} updateUserPosts={props.updateUserPosts} />
         </Container>
     </div>
   );

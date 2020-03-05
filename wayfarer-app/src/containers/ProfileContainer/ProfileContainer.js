@@ -12,12 +12,14 @@ class ProfileContainer extends React.Component {
     this.setState({ profile: user });
   }
 
-  getUserPosts(userId) {
+  getUserPosts = () => {
+    const userId = localStorage.getItem('uId');
     axios
     .get(`${process.env.REACT_APP_API_URL}/posts?authorId=${userId}`)
     .then(res => {
+      console.log(res.data.data)
       this.setState({
-        userPosts: res.data.data
+        userPosts: res.data.data.reverse()
       });
     })
     .catch(err => console.log(err.response))
@@ -31,13 +33,13 @@ class ProfileContainer extends React.Component {
         this.setState({
           profile: res.data.data
         });
-        this.getUserPosts(userId);
+        this.getUserPosts();
       })
       .catch(err => console.log(err.response))
   }
 
   render() {
-    return <Profile profile={this.state.profile} updateUser={this.updateUser} posts={this.state.userPosts} />;
+    return <Profile profile={this.state.profile} updateUser={this.updateUser} posts={this.state.userPosts} updateUserPosts={this.getUserPosts} />;
   }
 }
 

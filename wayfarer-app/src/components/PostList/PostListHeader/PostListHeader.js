@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
+import PostForm from '../PostForm/PostForm';
 
 class PostListHeader extends React.Component {
   state = {
@@ -24,9 +25,15 @@ class PostListHeader extends React.Component {
         <h1>Posts</h1>
         <a className="btn btn-warning btn-lg" onClick={this.handleOpen}>Add Post (+)</a>
         <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header>
+            <Modal.Title>{<h2>Create a post</h2>}</Modal.Title>
+          </Modal.Header>
           <Modal.Body>
-            <h1>POST FORM MODAL BAYBEE</h1>
+            <PostForm formMethod="create" updatePosts={this.props.updatePosts} handleClose={this.handleClose} />
           </Modal.Body>
+          <Modal.Footer>
+            <a className="btn btn-secondary text-light" onClick={this.handleClose}>Cancel</a>
+          </Modal.Footer>
         </Modal>
       </div>
     )

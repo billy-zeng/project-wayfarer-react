@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
+import PostForm from '../PostForm/PostForm';
 
 class PostInteraction extends React.Component {
   state = {
@@ -30,24 +31,13 @@ class PostInteraction extends React.Component {
     })
   };
 
-  // handleEditPost = () => {
-  //   console.log(this.props);
-  //   axios
-  //     .put(`${process.env.REACT_APP_API_URL}/posts/${this.props.postData._id}`)
-  //     .then(res => {
-  //       console.log(res);
-  //       this.props.history.push('/login');
-  //     })
-  //     .catch(err => console.log(err.response))
-  // };
-
   handleDeletePost = event => {
     event.preventDefault();
     axios
       .delete(`${process.env.REACT_APP_API_URL}/posts/${this.props.postData._id}`)
       .then(res => {
         console.log(res)
-        this.props.updateCityPosts();
+        this.props.updatePosts();
       })
       .catch(err => console.log(err));
   }
@@ -62,7 +52,7 @@ class PostInteraction extends React.Component {
           <Modal.Header>
             <Modal.Title>{this.state.showEdit ? <h2>Edit Post</h2> : <h2>Delete Post</h2>}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>{this.state.showEdit ? "Edit Form Here" : <h3>Are you sure you want to delete this?</h3>}</Modal.Body>
+          <Modal.Body>{this.state.showEdit ? <PostForm formMethod="edit" postData={this.props.postData} updatePosts={this.props.updatePosts} handleClose={this.handleClose} /> : <h4>Are you sure you want to delete this?</h4>}</Modal.Body>
           <Modal.Footer>
             {this.state.showEdit
               ? <a className="btn btn-secondary text-light" onClick={this.handleClose}>Cancel</a>
