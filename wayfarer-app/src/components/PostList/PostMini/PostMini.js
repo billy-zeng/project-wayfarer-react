@@ -7,7 +7,8 @@ import './PostMini.css';
 const PostMini = props => {
   return(
     <>
-    <div className="post-mini border rounded text-dark bg-light container d-flex flex-row align-items-start justify-content-center m-2">
+    <div className="border rounded text-dark bg-light container d-flex flex-column align-items-start justify-content-center m-2 p-2">
+    <div className="text-dark bg-light container d-flex flex-row align-items-start justify-content-center m-0">
       <div className="container col-sm-3 d-flex flex-column align-items-center justify-content-center">
         <img className="rounded border post-mini-img" src="https://images.unsplash.com/photo-1570432871838-d61aed09f144?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"/>
       </div>
@@ -23,7 +24,10 @@ const PostMini = props => {
         </div>
       </div>
     </div>
+    <div className="text-dark bg-light container d-flex flex-column mt-0 mb-1">
     <PostInteraction />
+    </div>
+    </div>
     </>
   );
 };
