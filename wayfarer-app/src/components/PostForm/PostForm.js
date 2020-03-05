@@ -6,23 +6,23 @@ import axios from 'axios';
 class PostForm extends React.Component {
 
         state = {
-                //this is going to be the info typed into a form, or info that is needed to create a post?  
-                // post : {
-                //         // title: '',
-                //         // content: '',//this.props.content,
-                //         city: ''//this.props.city,
-                // }
-                
-        }
+                city:'',
+                title:'',
+                comment:'',
+        };
+
 
         handleChange = event => {
-                this.setState({
-                [event.target.name]: event.target.value
-                });
+
+                console.log(event.target.value);
+
+               this.setState({ 
+                       [event.target.name]: event.target.value
+               });
         };
         
         handleSubmit = event => {
-                event.preventDefault();
+               
                 axios
                 .post(`${process.env.REACT_APP_API_URL}/posts`, this.state, {withCredentials: true})
                 .then(res => {
@@ -31,6 +31,9 @@ class PostForm extends React.Component {
                 this.props.history.push('/post');
                 })
                 .catch(err => console.log(err.response));
+
+                // moved this down here:  
+                event.preventDefault();
         };
         
         render() {
@@ -44,36 +47,38 @@ class PostForm extends React.Component {
                         <h4 className='mb-3'>Make a post</h4>
                         <form onSubmit={this.handleSubmit}>
 
-                        <div className="dropdown">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Cities
-                                </button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <button className="dropdown-item" type="button" value="1" onChange={this.handleChange}>San Francisco</button>
-                                        <button className="dropdown-item" type="button" value="2" onChange={this.handleChange}>London</button>
-                                </div>
+                        <div>
+                        <select defaultValue={this.state.city} name="city" onChange={this.handleChange}>
+                                <option value="N/A"> Select a city</option>
+                                <option value="London">London</option>
+                                <option value="Gibraltar">Gibraltar</option>
+                                <option value="San Francisco">San Francisco</option>
+                        </select>
                         </div>
 
 
+
                         <div className='form-group'>
-                        <label htmlFor='title'></label>
-                        <textarea 
-                        onChange={this.handleChange}
-                        className='form-control form-control-lg'
-                        type='text'
-                        id='title'
-                        name='title'
 
+                                <label htmlFor='title'>
 
-                        value={this.state.title}
-                        >My Title</textarea>
+                                </label>
+
+                                <textarea onChange={this.handleChange} className='form-control form-control-lg' type='text'
+                                id='title' 
+                                value={this.state.title} name='title' 
+                                placeholder="Title">
+                                <p>TITLE HERE</p>
+                                
+                                </textarea>
+
                         </div>
 
 
                         <div className="form-group">
                                 <label for="comment"></label>
                                 
-                                <textarea className="form-control" rows="5" onChange={this.handleChange} className='form-control form-control-lg' type='text' id='content' name='content' value={this.state.content}>What did I experience?</textarea>
+                                <textarea className="form-control" rows="5" onChange={this.handleChange} className='form-control form-control-lg' type='text' id='content' name='content' value={this.state.content} placeholder="What did I experience?"></textarea>
                         </div>
 
                         <div className='button-wrapper'>
@@ -86,8 +91,8 @@ class PostForm extends React.Component {
                 </div>
                 </div>
                 );
-        }
-}    
+        };
+}   
 export default PostForm;
 
 // export default withRouter(PostForm);
