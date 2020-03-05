@@ -17,7 +17,7 @@ const Routes = props => {
       <Route
         path='/profile/myposts'
         render={() => (
-          <MyPosts profile={props.profile} />
+          <MyPosts profile={props.profile} posts={props.posts} />
         )}
       />
       <Route
