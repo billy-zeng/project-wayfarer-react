@@ -20,7 +20,6 @@ class Login extends React.Component {
     axios
       .post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {withCredentials: true})
       .then(res => {
-        console.log(res);
         this.props.setCurrentUser(res.data.data);
         this.props.handleClose();
         this.props.history.push('/profile');

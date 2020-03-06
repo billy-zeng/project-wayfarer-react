@@ -6,7 +6,8 @@ import axios from 'axios';
 class CitiesContainer extends React.Component {
   state = {
     currentCity: 1, // current city initialized as 1 == San Francisco
-    cityPosts: []
+    cityPosts: [],
+    cities: ['San Francisco', 'London', 'Gibraltar', 'Seattle', 'San Diego', 'San Antonio']
   };
 
   updateCurrentCity = city => {
@@ -37,7 +38,7 @@ class CitiesContainer extends React.Component {
     return (
       <div className="container d-flex flex-row justify-content-center align-items-center">
         <CityNav currentCity={this.state.currentCity} updateCurrentCity={this.updateCurrentCity} />
-        <CityMain currentCity={this.state.currentCity} posts={this.state.cityPosts} updateCityPosts={this.getCityPosts} />
+        <CityMain currentCity={this.state.currentCity} currentCityName={this.state.cities[this.state.currentCity-1]} posts={this.state.cityPosts} updateCityPosts={this.getCityPosts} />
       </div>
     )
   }

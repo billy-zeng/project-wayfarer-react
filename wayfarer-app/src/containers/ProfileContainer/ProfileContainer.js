@@ -17,7 +17,6 @@ class ProfileContainer extends React.Component {
     axios
     .get(`${process.env.REACT_APP_API_URL}/posts?authorId=${userId}`)
     .then(res => {
-      console.log(res.data.data)
       this.setState({
         userPosts: res.data.data.reverse()
       });

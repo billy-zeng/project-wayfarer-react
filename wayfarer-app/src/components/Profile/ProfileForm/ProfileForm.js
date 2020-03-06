@@ -24,7 +24,6 @@ class ProfileForm extends React.Component {
     axios
       .put(`${process.env.REACT_APP_API_URL}/users/${this.props.profile._id}`, this.state, {withCredentials: true})
       .then(res => {
-        console.log(res);
         this.props.updateUser(res.data.data);
         this.props.history.push('/profile');
       })

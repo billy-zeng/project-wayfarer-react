@@ -10,7 +10,6 @@ class PostForm extends React.Component {
   };
 
   handleChange = event => {
-    console.log(event.target.value);
     this.setState({ 
       [event.target.name]: event.target.value
     });
@@ -33,7 +32,6 @@ class PostForm extends React.Component {
     axios
       .put(`${process.env.REACT_APP_API_URL}/posts/${this.props.postData._id}`, this.state, {withCredentials: true})
       .then(res => {
-        console.log(res);
         this.props.updatePosts();
         this.props.handleClose();
       })
@@ -41,7 +39,6 @@ class PostForm extends React.Component {
   };
   
   render() {
-    console.log(this.state)
     return (
       <div className='container mt-4 mb-3'>
         <div className='row'>
@@ -53,6 +50,9 @@ class PostForm extends React.Component {
                   <option value={1}>San Francisco</option>
                   <option value={2}>London</option>
                   <option value={3}>Gibraltar</option>
+                  <option value={4}>Seattle</option>
+                  <option value={5}>San Diego</option>
+                  <option value={6}>San Antonio</option>
                 </select>
               </div>
               <div className='form-group'>
