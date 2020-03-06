@@ -45,7 +45,7 @@ class PostInteraction extends React.Component {
   render(){
     console.log(this.props)
     return (
-      <div className="container d-flex flex-row align-items-end justify-content-end">
+      <div className="container d-flex flex-row align-items-end justify-content-end mb-2">
         <a className="btn btn-primary text-light mr-3" onClick={this.handleOpenEdit}>Edit Post</a>
         <a className="btn btn-danger text-light mr-3" onClick={this.handleOpenDelete}>Delete Post</a>
         <Modal show={this.state.show} onHide={this.handleClose}>

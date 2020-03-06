@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PostInteraction from '../PostInteraction/PostInteraction';
 
 import './PostMini.css';
@@ -13,7 +13,7 @@ const PostMini = props => {
         </div>
         <div className="col-sm-9 d-flex flex-column align-items-center justify-content-center">
           <div className="bg-dark m-2 p-2 rounded container row-sm-2 d-flex flex-column align-items-center justify-content-center">
-            <Link to="/post/detail" className="d-flex align-self-start post-mini-title ">
+            <Link to={`/post/${props.postData._id}`} className="d-flex align-self-start post-mini-title" postData={props.postData}>
               <h4 className="d-flex align-self-start post-mini-title text-light">{props.postData.title}</h4>
             </Link>
             <small className="d-flex align-self-start text-light">by {props.postData.author}</small>
@@ -30,4 +30,4 @@ const PostMini = props => {
   );
 };
 
-export default PostMini;
+export default withRouter(PostMini);
