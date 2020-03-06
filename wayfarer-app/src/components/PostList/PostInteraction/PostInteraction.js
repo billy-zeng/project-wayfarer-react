@@ -11,20 +11,33 @@ class PostInteraction extends React.Component {
 
   // opens edit form
   handleOpenEdit = () => {
-    this.setState({
-      show: true,
-      showEdit: true,
-    })
+    // user may only edit their own posts
+    if (this.props.postData.authorId == localStorage.getItem('uId')) {
+      this.setState({
+        show: true,
+        showEdit: true,
+      })
+    } else {
+      this.handleClose();
+      alert("Unauthorized. You may only edit your own posts.");
+    }
   };
 
   // opens delete confirmation
   handleOpenDelete = () => {
-    this.setState({
-      show: true,
-      showEdit: false
-    })
+    // user may only delete their own posts
+    if (this.props.postData.authorId == localStorage.getItem('uId')) {
+      this.setState({
+        show: true,
+        showEdit: false
+      })
+    } else {
+      this.handleClose();
+      alert("Unauthorized. You may only delete your own posts.");
+    }
   };
 
+  // close modal
   handleClose = () => {
     this.setState({
       show: false,
@@ -36,16 +49,14 @@ class PostInteraction extends React.Component {
     axios
       .delete(`${process.env.REACT_APP_API_URL}/posts/${this.props.postData._id}`)
       .then(res => {
-        console.log(res)
         this.props.updatePosts();
       })
       .catch(err => console.log(err));
   }
  
   render(){
-    console.log(this.props)
     return (
-      <div className="container d-flex flex-row align-items-end justify-content-end">
+      <div className="container d-flex flex-row align-items-end justify-content-end mb-2">
         <a className="btn btn-primary text-light mr-3" onClick={this.handleOpenEdit}>Edit Post</a>
         <a className="btn btn-danger text-light mr-3" onClick={this.handleOpenDelete}>Delete Post</a>
         <Modal show={this.state.show} onHide={this.handleClose}>

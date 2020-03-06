@@ -26,7 +26,6 @@ const Routes = props => {
           <ProfileMain profile={props.profile} />
         )}
       />
-      {/* <Route exact path='/profile/mycomments' component={} /> */}
     </Switch>
   )
 }

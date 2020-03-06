@@ -18,11 +18,9 @@ class Signup extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
     axios
       .post(`${process.env.REACT_APP_API_URL}/auth/signup`, this.state)
       .then(res => {
-        console.log(res);
         this.props.handleOpenLogin();
       })
       .catch(err => console.log(err.response))

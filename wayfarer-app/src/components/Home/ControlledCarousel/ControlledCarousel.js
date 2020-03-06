@@ -1,7 +1,5 @@
 import React from 'react';
-
 import Carousel from 'react-bootstrap/Carousel';
-
 import './ControlledCarousel.css';
 
 class ControlledCarousel extends React.Component {
@@ -25,7 +23,6 @@ class ControlledCarousel extends React.Component {
 
   render() {
     const { index, direction } = this.state;
-
     return (
       <Carousel
         activeIndex={index}
